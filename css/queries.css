@@ -1,7 +1,7 @@
-/* rem and em don't depend on the HTML Font-size in media query , instead 1rem = 1em= 16px*/
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 
 /**************************/
-/* BELOW 1344PX (Smaller desktops) */
+/* BELOW 1344px (Smaller desktops) */
 /**************************/
 
 @media (max-width: 84em) {
@@ -19,18 +19,15 @@
 }
 
 /**************************/
-/* BELOW 1200PX (Landscape Tablets) */
+/* BELOW 1200px (Landscape Tablets) */
 /**************************/
 
 @media (max-width: 75em) {
-  /* 9px / 16px = 56.25% */
   html {
+    /* 9px / 16px  */
     font-size: 56.25%;
   }
 
-  .main-nav-list {
-    gap: 3.2rem;
-  }
   .grid {
     column-gap: 4.8rem;
     row-gap: 6.4rem;
@@ -48,6 +45,10 @@
     padding: 0 3.2rem;
   }
 
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
   .hero {
     gap: 4.8rem;
   }
@@ -56,12 +57,14 @@
     padding: 9.6rem 3.2rem;
   }
 }
+
 /**************************/
-/* BELOW 944PX (Tablets) */
+/* BELOW 944px (Tablets) */
 /**************************/
+
 @media (max-width: 59em) {
   html {
-    /* 8ox / 16px = 0.5 or 50% */
+    /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
 
@@ -71,10 +74,7 @@
     gap: 6.4rem;
   }
 
-  .hero-text-box {
-    text-align: center;
-  }
-
+  .hero-text-box,
   .hero-img-box {
     text-align: center;
   }
@@ -82,6 +82,7 @@
   .hero-img {
     width: 60%;
   }
+
   .delivered-meals {
     justify-content: center;
     margin-top: 3.2rem;
@@ -90,22 +91,28 @@
   .logos img {
     height: 2.4rem;
   }
+
   .step-number {
     font-size: 7.4rem;
   }
+
   .meal-content {
     padding: 2.4rem 3.2rem 3.2rem 3.2rem;
   }
+
   .section-testimonials {
     grid-template-columns: 1fr;
   }
+
   .gallery {
     grid-template-columns: repeat(6, 1fr);
   }
+
   .cta {
-    /* 3/5 = 60% , 2/5 = 40% */
+    /* 3/5 = 60% + 2/5 = 40% */
     grid-template-columns: 3fr 2fr;
   }
+
   .cta-form {
     grid-template-columns: 1fr;
   }
@@ -115,16 +122,15 @@
   }
 
   /* MOBILE NAVIGATION */
-
   .btn-mobile-nav {
     display: block;
-    z-index: 9999;
   }
+
   .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.97);
     width: 100%;
     height: 100vh;
     transform: translateX(100%);
@@ -134,13 +140,17 @@
     justify-content: center;
     transition: all 0.5s ease-in;
 
-    /* HIDE NAVIGATION */
-    /* display: none; it does not allow any transition at all */
+    /* Hide navigation */
+    /* Allows NO transitions at all */
+    /* display: none; */
+
     /* 1) Hide it visually */
     opacity: 0;
-    /* 2) Make it unaccessible by mouse clicks and keyboard taps */
+
+    /* 2) Make it unaccessible to mouse and keyboard */
     pointer-events: none;
-    /* 3) Hide it from screen reader */
+
+    /* 3) Hide it from screen readers */
     visibility: hidden;
   }
 
@@ -151,25 +161,27 @@
     transform: translateX(0);
   }
 
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
   .main-nav-list {
     flex-direction: column;
     gap: 4.8rem;
   }
+
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
   }
-
-  .nav-open .icon-mobile-nav[name="close-outline"] {
-    display: block;
-  }
-  .nav-open .icon-mobile-nav[name="menu-outline"] {
-    display: none;
-  }
 }
 
 /**************************/
-/* BELOW 704PX (Smaller Tablets) */
+/* BELOW 704px (Smaller tablets) */
 /**************************/
 
 @media (max-width: 44em) {
@@ -177,6 +189,7 @@
   .grid--4-cols {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .diets {
     grid-column: 1 / -1;
     justify-self: center;
@@ -193,31 +206,41 @@
   .grid--footer {
     grid-template-columns: repeat(6, 1fr);
   }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
   .nav-col {
     grid-row: 1;
     grid-column: span 2;
     margin-bottom: 3.2rem;
   }
-  .logo-col,
-  .address-col {
-    grid-column: span 3;
-  }
 }
+
 /**************************/
-/* BELOW 544PX (Smaller Phones) */
+/* BELOW 544px (Phones) */
 /**************************/
+
 @media (max-width: 34em) {
   .grid {
     row-gap: 4.8rem;
   }
+
   .grid--2-cols,
   .grid--3-cols,
   .grid--4-cols {
     grid-template-columns: 1fr;
   }
 
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
   .section-hero {
-    background-color: #fdf2e9;
     padding: 2.4rem 0 6.4rem 0;
   }
 
@@ -233,36 +256,35 @@
     height: 1.2rem;
   }
 
-  .btn,
-  .btn:link,
-  .btn:visited {
-    padding: 2.4rem 1.6rem;
-  }
-
   .step-img-box:nth-child(2) {
     grid-row: 1;
   }
+
   .step-img-box:nth-child(6) {
     grid-row: 5;
   }
 
   .step-img-box {
-    transform: translateY(24px);
+    transform: translateY(2.4rem);
   }
 
   .testimonials {
     grid-template-columns: 1fr;
   }
+
   .gallery {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
   }
+
   .cta {
     grid-template-columns: 1fr;
   }
-  .cta-text-box{
+
+  .cta-text-box {
     padding: 3.2rem;
   }
+
   .cta-img-box {
     height: 32rem;
     grid-row: 1;
@@ -272,6 +294,7 @@
 /* 
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
 - Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
